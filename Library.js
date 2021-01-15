@@ -72,6 +72,8 @@ class Media {
 
 
 
+
+
     // Getter and Setters for the isCheckedOut property
     get set_isCheckedOut () {
         return this._isCheckedOut;
@@ -95,12 +97,19 @@ class Media {
 
 
 
+
     // Getter for the ratings property
     get get_ratings () {
         return this._ratings;
     }
 
     // There is no need for a rarintg setter because the ratings won't ever change
+
+
+
+
+
+
 
 
 
@@ -140,9 +149,86 @@ class Media {
 
 
 
-    get 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    getAvergaeRating = () => {
+
+
+        // For the reduce parameter
+        let reducer = (accumulator, currentValue) => {
+            return accumulator + currentValue;
+        }
+
+
+
+
+        /* 
+            Calculates the sum of the numbers in the ratings array
+            
+            Stores the sum in the sum_of_Ratings variable
+        */
+        let sum_of_Ratings = this.get_ratings.reduce(reducer);
+
+
+
+
+
+        // Assigns the length of the ratings array to length_of_Ratings                                             
+        let amount_of_Ratings = this.get_ratings.length;
+
+
+
+        /*
+            Divides the sum of the ratings by the amount of ratings 
+            in the rating array to geth the average
+
+            Stores the sum of the ratings into the variable averge_Rating
+        */
+        let averge_Rating = sum_of_Ratings / amount_of_Ratings;
+
+
+
+        return averge_Rating;
+
+
+    } // End of getAverageRating function
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    addRating = (new_Rating) => {
+        this._ratings.push(new_Rating);
+    }
 
 
 
@@ -158,3 +244,43 @@ class Media {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// The book class is a subclass of the Media class
+class Book extends Media{
+
+    constructor(author, title, pages) {
+
+        super(title);
+        
+        this._author = author;
+
+        this._pages = pages;
+    } // End of book constructor
+
+} // End of the Book class
