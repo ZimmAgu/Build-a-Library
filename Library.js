@@ -74,6 +74,8 @@ class Media {
 
 
 
+
+
     // Getter and Setters for the isCheckedOut property
     get set_isCheckedOut () {
         return this._isCheckedOut;
@@ -140,6 +142,7 @@ class Media {
         this.set_isCheckedOut = !this.set_isCheckedOut;
 
     } // End of toggleCheckOutStatus function
+
 
 
 
@@ -270,17 +273,189 @@ class Media {
 
 
 
-
-// The book class is a subclass of the Media class
+//////////////////
+//  Book Class  //
+//////////////////
 class Book extends Media{
 
-    constructor(author, title, pages) {
+
+
+
+    constructor(title, author, pages) {
 
         super(title);
         
         this._author = author;
 
         this._pages = pages;
+
     } // End of book constructor
 
+
+
+
+
+
+
+
+
+
+    // Get method for the author property
+    get get_author () {
+
+        return this._author;
+
+    }
+    /* 
+        The author does not change 
+        so the _author property doesn't need a setter
+    */
+
+
+
+    get get_pages () {
+
+        return this._pages;
+
+    }
+    /* 
+        The amount of pages in a book does not change
+        so the _pages property doesn't need a setter
+    */
+
+
+
+
 } // End of the Book class
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////
+//  Movie class //
+//////////////////
+class Movie extends Media {
+
+
+
+
+    constructor(title, director, runtime) {
+        
+        super(title);
+
+        this._director = director;
+
+        this._runtime = runtime;
+
+    } // End of constructor 
+
+
+
+
+
+
+
+
+
+
+    get get_director () {
+
+        return this._director;
+
+    }
+    /* 
+        The director of a movie does not change
+        so there is no setter for _director
+    */
+
+
+
+
+
+
+
+
+
+    get get_runtime () {
+
+        return this._runtime;
+
+    }
+    /* 
+        The runtime of a movie does not change
+        so there is no setter for _runtime
+    */
+
+
+} // End of Movie class
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                         End of Class Declarations                                           //                                        
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
